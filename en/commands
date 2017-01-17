@@ -1,1 +1,7 @@
-*HELLO WORLD*==say "Hello World"
+*REMINDER (*) TERMINATED*|*REMINDER (*) END*|*REMINDER (*) STOP*==echo "Reminder(1)" >> ~/reminder.txt && say "I've added (1) to the reminder"
+*DELETE*REMINDER*|*EMPTY*REMINDER*==say "Please confirm that you want to delete the reminders?"
+>*YES*==echo "" > ~/reminder.txt && say "Ok reminders has been deleted"
+>*NO*==say "OK I won't delete the reminders"
+*READ*REMINDER*|*WHAT*IN*REMINDER*==say "It contains $(cat ~/reminder.txt)"
+*SEND*REMINDER*MAUD*|*EMAIL*REMINDER*MOD*==mpack -s "Reminder content" /home/pi/reminder.txt sonmail@gmail.com && say "The reminder has been sent to Maud"
+*SEND*REMINDER*THOMAS==mpack -s "Reminder content" /home/pi/reminder.txt monmail@gmail.com && say "The reminder has been sent to Maud Thomas"

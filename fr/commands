@@ -1,0 +1,7 @@
+*PENSE (*) TERMINE*|*PENSE (*) FIN*|*PENSE (*) STOP*|*PENSE (*) ARRET*==echo "Pense(1)" >> ~/pensebete.txt && say "J'ai ajouté (1) aux pense bête"
+*SUPPRIME*PENSE*|*VIDE*PENSE*==say "Veux tu confirmer la supression du pense-bête?"
+>*OUI*==echo "" > ~/pensebete.txt && say "Ok les pense bête sont effacés"
+>*NON*==say "OK Je ne la supprime pas"
+*LI*PENSE*|*QUOI*DANS*PENSE*==say "elle contient $(cat ~/pensebete.txt)"
+*ENVOI*PENSE*MAUD*|*EVOI*PENSE*MOD*==mpack -s "Contenu du pense-bête" /home/pi/pensebete.txt sonmail@gmail.com && say "Le pense-bête ont été envoyer à Maud"
+*ENVOI*PENSE*==mpack -s "Contenu du pense-bête" /home/pi/pensebete.txt monmail@gmail.com && say "Le pense-bête ont été envoyer à Thomas"
